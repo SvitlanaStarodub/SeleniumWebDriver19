@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -17,7 +18,7 @@ namespace SeleniumWebDriver
                 {
                     ChromeOptions chromeOptions = new ChromeOptions();
                     chromeOptions.AddUserProfilePreference("profile.default_content_setting_values.notifications", 2);
-
+                   // _driver = new ChromeDriver(Directory.GetCurrentDirectory(), chromeOptions);
                     _driver = new ChromeDriver(@"C:\Users\Svitlana_Starodub\source\repos\SeleniumWebDriver", chromeOptions);
                 }
                 return _driver;
