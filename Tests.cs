@@ -11,6 +11,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using SeleniumWebDriver.Helper;
+using SeleniumWebDriver.PageObjects;
 
 namespace SeleniumWebDriver
 {
@@ -72,9 +73,11 @@ namespace SeleniumWebDriver
             var result = actualTitle.Text;
             
             var expectedTitle = "lg";
+            var webTitle = "LG";
             ////assert
 
-            Assert.AreEqual(expectedTitle, result, "The title of the page does not contain the expected word");
+            //Assert.AreEqual(expectedTitle, result, "The title of the page does not contain the expected word");
+            Assert.IsTrue(driver.Title.Contains(webTitle));
         }
 
         [Test(Description = "Verify a TV name and price")]
@@ -133,6 +136,7 @@ namespace SeleniumWebDriver
             CollectionAssert.AreEqual(filterList, filter);
         }
 
+        
         [OneTimeTearDown]
         public void TearDown()
         {
