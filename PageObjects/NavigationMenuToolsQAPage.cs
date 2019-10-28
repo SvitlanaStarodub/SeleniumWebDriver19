@@ -20,12 +20,12 @@ namespace SeleniumWebDriver.PageObjects
         private IWebElement AutoSwitchedWindow => _driver.FindElement(
             By.XPath("//nav[@class='navigation']//span[contains(text(),'Automation Practice Switch Windows')]"));
 
-        public void NavigateToPageFromMenu(IWebElement element, IWebDriver driver)
+        public AutomationSwitchedWindowsPage NavigateToPageFromMenu(IWebElement element, IWebDriver _driver)
         {
             Actions action = new Actions(_driver);
             action.MoveToElement(element).Perform();
             AutoSwitchedWindow.Click();
-
+            return new AutomationSwitchedWindowsPage(_driver);
         }
 
     }

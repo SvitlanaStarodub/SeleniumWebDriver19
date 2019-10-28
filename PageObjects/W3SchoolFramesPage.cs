@@ -24,5 +24,6 @@ namespace SeleniumWebDriver.PageObjects
             js.ExecuteScript("arguments[0].scrollIntoView();", element1);
             element2.Click();
         }
+       
     }
 }
